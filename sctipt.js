@@ -46,9 +46,20 @@ Write a function sayHello that accepts a name and a callback function.
 Use setTimeout to wait for 1 second and then call the callback function, passing the message "Hello, [name]!" (replace [name] with the provided name).
 */
 
-
 //ARROW FUNCTION AS CALLBACK
+function sayHello(name, callback){
+    callback(name)
+}
+sayHello('Pavan Kalyan',(res)=>{
+    setTimeout(()=>console.log(`Hello ${res}`),1000)
+})
 //ANONYMOUS FUNCTION AS CALLBACK 
+function sayHello1(name, callback){
+    callback(name)
+}
+sayHello1('PAVAN KALYAN', function(res){
+    setTimeout(()=>console.log(`Hello ${res}`),1000)
+})
 
 /**
 Write a function checkEven that accepts a number and two callback functions. 
@@ -92,5 +103,23 @@ Log the final result to the console.
 */
 
 //ARROW FUNCTION AS CALLBACK
-
+function add(val, addCallback){
+    addCallback(val+5)
+}
+function multiply(val, multiplyCallback){
+    multiplyCallback(val*2)
+}
+add(20, addRes=>{
+    multiply(addRes,(multiplyRes)=>console.log(multiplyRes))
+})
 //ANONYMOUS FUNCTION AS CALLBACK 
+function add1(val, addCallback){
+    addCallback(val+5)
+}
+function multiply1(val, multiplyCallback){
+    multiplyCallback(val*2)
+}
+add1(20, function(addRes){
+    multiply1(addRes,function(multiplyRes)
+    {console.log(multiplyRes)})
+})
